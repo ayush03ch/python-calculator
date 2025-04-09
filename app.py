@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
 from calculator import add, subtract, multiply, divide
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, origins=["https://ayush03ch.github.io"])  # 👈 Restrict or use '*
 
 @app.route("/")
 def home():
